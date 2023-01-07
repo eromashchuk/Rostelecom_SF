@@ -2,7 +2,7 @@
 # -*- encoding=utf8 -*-
 import time
 from termcolor import colored
-
+from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -132,6 +132,7 @@ class WebElement(object):
             print('Error: {0}'.format(e))
         return text
 
+
     def get_attribute(self, attr_name):
         """ Get attribute of the element. """
 
@@ -227,6 +228,8 @@ class WebElement(object):
             element.send_keys(Keys.DELETE)
         except Exception as e:
             print(e)
+
+
 
 
 class ManyWebElements(WebElement):

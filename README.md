@@ -7,15 +7,16 @@
 Ссылка на тестирование требований, тест-кейсы, баг-репорты: 
 https://docs.google.com/spreadsheets/d/1HX-lFI71BCHktzbxNOhFDt7CL5gVvJwAk125W1hbKYw/edit?usp=sharing
 
-base_page.py - базовый класс, функции
-reg_page.py - класс для страницы регистрации
-locators.py - локаторы для автотестов
+base.py - базовый класс, методы для страницы
+auth_page - описание класса и локаторов страницы авторизации
+elements.py - базовый класс, методы, процедуры для элементов
 settings.py - данные для тестовых сценариев
 config.py - файл с фикстурами
+locators.py - файл с локаторами, не применялся в данной модели
+requirements.txt - файл с зависимостями
+pytesy.ini - файл для маркировки тестов
 
-test_rt_login.py - набор автотестов для страницы авторизации
-test_rt_reg.py - набор автотестов для страницы регистрации
-
+test_auth_page.py - набор автотестов для страницы авторизации
 
 Запуск тестов:
 
@@ -26,4 +27,4 @@ pip install -r requirements.txt
 
 Запустить тесты можно командой:
 python -m pytest -v --driver Firefox --driver-path <Путь до вебдрайвера>\geckodriver.exe
-python -m pytest -v --driver Chrome --driver-path <Путь до вебдрайвера>\chromedriver.exe
+python -m pytest -v --driver Chrome --driver-path <Путь до вебдрайвера>\chromedriver.exe       

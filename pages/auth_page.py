@@ -35,7 +35,8 @@ class AuthPage(WebPage):
 
     # Input fields of the auth form
     login = WebElement(id='username')
-    login_value = WebElement(css_selector='div.tabs-input-container__login > div > div.rt-input__input-value')
+    login_value = WebElement(xpath='//*[@id="page-right"]/div/div/div/form/div[1]/div[2]/div/span[1]/span[1]')
+                                          #div.tabs-input-container__login > div .rt-input__mask-start
     password = WebElement(id='password')
     placeholder_login = WebElement(xpath='//*[@id="page-right"]/div/div/div/form/div[1]/div[2]/div/span[2]')
     placeholder_pswrd = WebElement(xpath='//*[@id="page-right"]/div/div/div/form/div[2]/div/span[2]')
@@ -46,12 +47,16 @@ class AuthPage(WebPage):
     check_box = WebElement(class_name='rt-checkbox__label')
     submit_btn = WebElement(id='kc-login')
 
-    forgot_pswrd = WebElement(id='forgot_password')
-    forgot_orange = WebElement(
+    forgot_pswrd_link = WebElement(id='forgot_password')
+    forgot_password_form = WebElement(css_selector='h1.card-container__title')
+    invalid_login_message = WebElement(id='form-error-message')
+    forgot_orange_link = WebElement(
         css_selector='.rt-link.rt-link--orange.login-form__forgot-pwd.login-form__forgot-pwd--animated')
-    contract = WebElement(id='rt-footer-agreement-link')
+    auth_policy = WebElement(xpath='//*[@id="page-right"]/div/div/div/form/div[4]/a[1]')
+    agreement_link = WebElement(id='rt-footer-agreement-link')
 
     register = WebElement(id='kc-register')
+    register_form = WebElement(css_selector='h1.card-container__title')
 
     #Auth by social medias
     vk_btn = WebElement(id='oidc_vk')
@@ -60,5 +65,5 @@ class AuthPage(WebPage):
     google_btn = WebElement(id='oidc_google')
     ya_btn = WebElement(id='oidc_ya')
 
-    #Erorr messages for page
+    #Erorr messages for empty login
     error_empty_login = WebElement(class_name='.rt-input-container__meta.rt-input-container__meta--error')
